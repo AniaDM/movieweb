@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pl">
+
+<head>
+  <meta charset="utf-8">
+  <title>Movie Web</title>
+  <meta name="description" content="Portal o filmach">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap&subset=latin-ext" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/661b06999a.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <div class="section">
+    <div class="form">
+      <form method="POST" action="" class="form" id="addFilmForm">
+        <div class="subform">
+          <div class="messages">
+          </div>
+          <input type="text" id="title" name="title" placeholder="Tytuł">
+        </div>
+        <div class="subform">
+          <div class="messages">
+          </div>
+          <input type="text" id="director" name="director" placeholder="Reżyser">
+        </div>
+        <div class="subform">
+          <div class="messages">
+          </div>
+          <input type="number" id="year" name="year" placeholder="Rok">
+        </div>
+        <div class="subform">
+          <div class="messages">
+          </div>
+          <select id="grade" name="grade">
+            <option class="grade" disabled selected hidden>Ocena</option>
+            <option value="7">7</option>
+            <option value="6">6</option>
+            <option value="5">5</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1</option>
+          </select>
+        </div>
+        <input class="send" type="submit" value="Wyślij">
+      </form>
+    </div>
+    <div class="content">
+      <input type="text" id="filter" onkeyup="filter()" placeholder="Search for..." title="What are you looking for?">
+      <table id="filmTable">
+        <thead>
+          <tr class="list">
+            <th>Tytuł<i class="fas fa-sort"></i></th>
+            <th>Reżyser<i class="fas fa-sort"></i></th>
+            <th>Rok<i class="fas fa-sort"></i></th>
+            <th>Ocena<i class="fas fa-sort"></i></th>
+            <th>Data dodania<i class="fas fa-sort"></i></th>
+          </tr>
+        </thead>
+        <tbody id="filmTableList">
+        </tbody>
+      </table>
+      <p id="noneFilm">Nie został dodany film!</p>
+    </div>
+  </div>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+  <script src="main.js"></script>
+
+</body>
+
+</html>
