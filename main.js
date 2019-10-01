@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
             formData.append('director', filmDirector);
             formData.append('year', filmYear);
 
-            fetch('http://filmdb.grygiel.eu/api/movies/add', {
+            fetch('https://filmdb.grygiel.eu/api/movies/add', {
                     method: 'post',
                     body: formData
                 })
@@ -240,7 +240,7 @@ function sortTable(column, direction) {
 
 // Loads films from API
 const getFilms = () => {
-    fetch('http://filmdb.grygiel.eu/api/movies/load')
+    fetch('https://filmdb.grygiel.eu/api/movies/load')
         .then(res => {
             return res.json()
         })
@@ -272,7 +272,7 @@ let removeBtn = () => {
 
             let idFilm = row.parentNode.parentNode.getAttribute('data-id');
 
-            fetch(`http://filmdb.grygiel.eu/api/movies/delete/${idFilm}`, {
+            fetch(`https://filmdb.grygiel.eu/api/movies/delete/${idFilm}`, {
                     method: 'delete'
                 })
                 .then(res => res.json())
